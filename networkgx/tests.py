@@ -114,7 +114,7 @@ class DashGraph(nx.classes.graph.Graph):
 tree = Tree()
 
 # Get sample data
-stock_prices = pd.read_csv('../datasets/data/stock_prices.csv', parse_dates=True, index_col='Date')
+stock_prices = pd.read_csv('./dataset/stock_prices.csv', parse_dates=True, index_col='Date')
 stock_returns = stock_prices.pct_change()
 stock_returns.dropna(inplace=True)
 

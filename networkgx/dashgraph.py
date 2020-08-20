@@ -147,7 +147,7 @@ class DashGraph(nx.classes.graph.Graph):
         for node, adjacencies in enumerate(self.G.adjacency()):
             self.node_trace['marker']['color'] += tuple([len(adjacencies[1])])
             node_info = 'Name: ' + str(adjacencies[0]) + '<br># of neighboring nods: ' + str(len(adjacencies[1]))
-            self.node_trace['hovertext'] += tuple([node_info])
+            #self.node_trace['hovertext'] += tuple([node_info])
             self.node_trace['text'] += tuple([str(adjacencies[0])])
 
 
@@ -185,7 +185,7 @@ if __name__ == '__main__':
     tree = Tree()
 
     # Get sample data
-    stock_prices = pd.read_csv('../datasets/data/stock_prices.csv', parse_dates=True, index_col='Date')
+    stock_prices = pd.read_csv('./dataset/stock_prices.csv', parse_dates=True, index_col='Date')
     stock_returns = stock_prices.pct_change()
     stock_returns.dropna(inplace=True)
 
